@@ -28,8 +28,10 @@ class App():
 
 
 class Figure_Canvas(FigureCanvas):  
-    def __init__(self, parent=None, width=6, height=5, dpi=100):
-        fig = Figure(figsize=(width, height), dpi=100)  
+    def __init__(self, parent=None, width=7, height=4, dpi=100):
+        #fig = Figure(figsize=(width, height), dpi=100)  
+        fig = plt.figure(figsize=(width, height), dpi=100)
+        plt.style.use('seaborn-whitegrid')
 
         FigureCanvas.__init__(self, fig) 
         self.setParent(parent)
@@ -42,12 +44,15 @@ class Figure_Canvas(FigureCanvas):
         self.axes.bar(x,y,width,align="center")
         self.axes.set_xticks(x)
         self.axes.set_xticklabels(x)
+        self.axes.set_title('HI\nHI')
     
     def chart_pie(self,labellist,sizelist):
         labels = labellist
         sizes = sizelist
         self.axes.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=False, startangle=90)
         self.axes.axis('equal')
+        self.axes.set_title('HI')
+        self.axes.legend(title="Months",loc="center left",bbox_to_anchor=(0.9,0.5))
     
 
 class AppWindow(QMainWindow, Ui_MainWindow):
@@ -64,7 +69,7 @@ class AppWindow(QMainWindow, Ui_MainWindow):
             self.drawChart()
     
     def drawChart(self):
-        # tab 1
+        # tab ovdate
         dir = an.getalldateAmount_month(App.Data)
         labellist = []
         sizelist = []
@@ -72,12 +77,17 @@ class AppWindow(QMainWindow, Ui_MainWindow):
             labellist.append(key)
             sizelist.append(value)
 
-        dr = Figure_Canvas()
-        dr.chart_pie(labellist, sizelist) 
+        dr_ovDate1 = Figure_Canvas()
+        dr_ovDate1.chart_pie(labellist, sizelist)
+        
         graphicscene = QtWidgets.QGraphicsScene()
-        graphicscene.addWidget(dr)
-        self.ui.graphicsView_tab1.setScene(graphicscene)
-        self.ui.graphicsView_tab1.show()
+        graphicscene.addWidget(dr_ovDate1)
+        self.ui.graphicsView_ovDate1.setScene(graphicscene)
+        self.ui.graphicsView_ovDate1.show()
+        self.ui.graphicsView_ovDate2.setScene(graphicscene)
+        self.ui.graphicsView_ovDate2.show()
+        self.ui.graphicsView_ovDate3.setScene(graphicscene)
+        self.ui.graphicsView_ovDate3.show()
         
         # tab 2
         dir = an.getalldateAmount_month(App.Data)
@@ -88,7 +98,7 @@ class AppWindow(QMainWindow, Ui_MainWindow):
             sizelist.append(value)
 
         dr2 = Figure_Canvas()
-        dr2.chart_bar(labellist, sizelist)
+        #dr2.chart_bar(labellist, sizelist)
         graphicscene2 = QtWidgets.QGraphicsScene()
         graphicscene2.addWidget(dr2)
         self.ui.graphicsView_tab2.setScene(graphicscene2)

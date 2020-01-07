@@ -60,8 +60,3 @@ def getallCategoryAmount(datalist):
         print(key," ::", value)
     
     return categoriesDir
-
-"""
-def getAmountbyCategory(datalist, categorylist):
-    for d in datalist:
-"""
