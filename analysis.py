@@ -16,26 +16,52 @@ def getalldate_year(datalist):
             print(y.year)
     return years
 
-def getalldate_month(datalist):
+def getalldateAmount_month(datalist):
     months = []
+    monthsDir = {}
 
     for  d in datalist:
-        date = d['\ufeffDate']
+        date = d.get('\ufeffDate')
         m = datetime.datetime.strptime(date,'%Y-%m-%d')
+        # add month key
+        ym = str(m.year) + "/" + str(m.month)
+        if ym not in months:
+            months.append(ym)
+            monthsDir.update({ym : 0})
+        # add amount value
+        ## TODO check income or expenses
+        a = int(d.get('Amount').replace('-',''))
+        total = int(monthsDir.get(ym)) + a
+        monthsDir.update({ym : total})
 
-        if m.month not in months:
-            months.append(m.month)
-            print(m.month)
-    return months
+    for (key, value) in monthsDir.items():
+        print(key," ::", value)
 
-#----get all categories in data
-def getallCategory(datalist):
+    return monthsDir
+
+#----get all categories' amount  in data
+def getallCategoryAmount(datalist):
     categories = []
+    categoriesDir = {}
 
     for d in datalist:
-        c = d['Category']
-
+        c = d.get('Category')
+        # add category key
         if c not in categories:
             categories.append(c)
-            print(c)
-    return categories
+            categoriesDir.update({c : 0})
+        # add amount value
+        ## TODO check income or expenses
+        a = int(d.get('Amount').replace('-',''))
+        total = int(categoriesDir.get(c)) + a
+        categoriesDir.update({c : total})
+     
+    for (key, value) in categoriesDir.items():
+        print(key," ::", value)
+    
+    return categoriesDir
+
+"""
+def getAmountbyCategory(datalist, categorylist):
+    for d in datalist:
+"""

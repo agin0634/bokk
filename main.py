@@ -14,42 +14,38 @@ if hasattr(sys, 'frozen'):
 from mainUI import Ui_MainWindow
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow
+#myfont = fm.FontProperties(fname='C:/Windows/Fonts/msyh.ttc')
 
 class App():
+    Data = []
+
     def read_Csv(self,file):
-        Data = []
         with codecs.open(file, 'r','utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reversed(list(reader)):
-                Data.append(row)
+                #print(row)
+                self.Data.append(row)
 
-            an.getalldate_month(Data)
 
 class Figure_Canvas(FigureCanvas):  
-    def __init__(self, parent=None, width=5, height=4, dpi=100):
+    def __init__(self, parent=None, width=6, height=5, dpi=100):
         fig = Figure(figsize=(width, height), dpi=100)  
 
         FigureCanvas.__init__(self, fig) 
         self.setParent(parent)
         self.axes = fig.add_subplot(111)
 
-    def test(self):
-        #x = ['第1周','第2周',3,4,5,6,7,8,9]
-        x = ['聊天', '支付', '团购', '在线视频']
-        idx = np.arange(len(x))
-        y=[23,21,32,130]
+    def chart_bar(self,labellist,sizelist):
+        x = labellist
+        y = sizelist
         width = 0.5
-        #y = [23,21,32,13,3,132,13,3,1]
-        self.axes.bar([0,1,2,3],y,width,align="center")
-        self.axes.set_xticks([0,1,2,3])
+        self.axes.bar(x,y,width,align="center")
+        self.axes.set_xticks(x)
         self.axes.set_xticklabels(x)
-
     
-    def test2(self):
-        labels = ['Frogs', 'Hogs', 'Dogs', 'Logs']
-        sizes = [15, 30, 45, 10]
-        #explode = (0, 0.1, 0, 0)  # only "explode" the 2nd slice (i.e. 'Hogs')
-        
+    def chart_pie(self,labellist,sizelist):
+        labels = labellist
+        sizes = sizelist
         self.axes.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=False, startangle=90)
         self.axes.axis('equal')
     
@@ -68,20 +64,33 @@ class AppWindow(QMainWindow, Ui_MainWindow):
             self.drawChart()
     
     def drawChart(self):
+        # tab 1
+        dir = an.getalldateAmount_month(App.Data)
+        labellist = []
+        sizelist = []
+        for key, value in dir.items():
+            labellist.append(key)
+            sizelist.append(value)
+
         dr = Figure_Canvas()
-        dr.test()  
-        
-        dr2 = Figure_Canvas()
-        dr2.test2()
+        dr.chart_pie(labellist, sizelist) 
         graphicscene = QtWidgets.QGraphicsScene()
         graphicscene.addWidget(dr)
-        
         self.ui.graphicsView_tab1.setScene(graphicscene)
         self.ui.graphicsView_tab1.show()
+        
+        # tab 2
+        dir = an.getalldateAmount_month(App.Data)
+        labellist = []
+        sizelist = []
+        for key, value in dir.items():
+            labellist.append(key)
+            sizelist.append(value)
 
+        dr2 = Figure_Canvas()
+        dr2.chart_bar(labellist, sizelist)
         graphicscene2 = QtWidgets.QGraphicsScene()
         graphicscene2.addWidget(dr2)
-        
         self.ui.graphicsView_tab2.setScene(graphicscene2)
         self.ui.graphicsView_tab2.show()
 
