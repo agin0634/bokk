@@ -37,22 +37,49 @@ class Figure_Canvas(FigureCanvas):
         self.setParent(parent)
         self.axes = fig.add_subplot(111)
 
-    def chart_bar(self,labellist,sizelist):
+    def chart_bar(self,labellist,sizelist,title):
         x = labellist
         y = sizelist
         width = 0.5
         self.axes.bar(x,y,width,align="center")
         self.axes.set_xticks(x)
         self.axes.set_xticklabels(x)
-        self.axes.set_title('HI\nHI')
+        self.axes.set_title(title)
     
-    def chart_pie(self,labellist,sizelist):
+    def chart_pie(self,labellist,sizelist,title):
         labels = labellist
         sizes = sizelist
+
         self.axes.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=False, startangle=90)
         self.axes.axis('equal')
-        self.axes.set_title('HI')
+        self.axes.set_title(title)
         self.axes.legend(title="Months",loc="center left",bbox_to_anchor=(0.9,0.5))
+
+    def chart_donut(self,labellist,sizelist,title):
+        labels = labellist
+        sizes = sizelist
+        
+        wedges = self.axes.pie(sizes, wedgeprops=dict(width=0.5),startangle=90)
+        bbox_props = dict(boxstyle="square,pad=0.3", fc="w", ec="k", lw=0.72)
+        kw = dict(arrowprops=dict(arrowstyle="-"),
+            bbox=bbox_props, zorder=0, va="center")
+
+        for i,p in enumerate(wedges[0]):
+            ang = (p.theta2 - p.theta1)/2. + p.theta1
+            y = np.sin(np.deg2rad(ang))
+            x = np.cos(np.deg2rad(ang))
+            horizontalalignment = {-1: "right", 1: "left"}[int(np.sign(x))]
+            connectionstyle = "angle,angleA=0,angleB={}".format(ang)
+            kw["arrowprops"].update({"connectionstyle": connectionstyle})
+            self.axes.annotate(labels[i], xy=(x, y), xytext=(1.35*np.sign(x), 1.4*y),
+                horizontalalignment=horizontalalignment, **kw)
+
+        self.axes.set_title(title,y=0.425)
+
+    def chart_plot(self,labellist,sizelist,title):
+        self.axes.plot(labellist,sizelist)
+        self.axes.set_title(title)
+
     
 
 class AppWindow(QMainWindow, Ui_MainWindow):
@@ -66,10 +93,10 @@ class AppWindow(QMainWindow, Ui_MainWindow):
         if data:
             self.ui.pathlineEdit.setText(data[0])
             App.read_Csv(App,data[0])
-            self.drawChart()
+            self.drawChart_ovDate()
+            self.drawChart_ovCate()
     
-    def drawChart(self):
-        # tab ovdate
+    def drawChart_ovDate(self):
         dir = an.getalldateAmount_month(App.Data)
         labellist = []
         sizelist = []
@@ -78,19 +105,26 @@ class AppWindow(QMainWindow, Ui_MainWindow):
             sizelist.append(value)
 
         dr_ovDate1 = Figure_Canvas()
-        dr_ovDate1.chart_pie(labellist, sizelist)
+        dr_ovDate1.chart_pie(labellist, sizelist,'hi\n')
+        dr_ovDate2 = Figure_Canvas()
+        dr_ovDate2.chart_plot(labellist,sizelist,'ff\n')
         
         graphicscene = QtWidgets.QGraphicsScene()
         graphicscene.addWidget(dr_ovDate1)
+        graphicscene2 = QtWidgets.QGraphicsScene()
+        graphicscene2.addWidget(dr_ovDate2)
+        graphicscene3 = QtWidgets.QGraphicsScene()
+        graphicscene3.addWidget(dr_ovDate2)
         self.ui.graphicsView_ovDate1.setScene(graphicscene)
         self.ui.graphicsView_ovDate1.show()
-        self.ui.graphicsView_ovDate2.setScene(graphicscene)
+        self.ui.graphicsView_ovDate2.setScene(graphicscene2)
         self.ui.graphicsView_ovDate2.show()
-        self.ui.graphicsView_ovDate3.setScene(graphicscene)
+        self.ui.graphicsView_ovDate3.setScene(graphicscene3)
         self.ui.graphicsView_ovDate3.show()
         
+    def drawChart_ovCate(self):
         # tab 2
-        dir = an.getalldateAmount_month(App.Data)
+        dir = an.getallCategoryAmount(App.Data)
         labellist = []
         sizelist = []
         for key, value in dir.items():
@@ -98,11 +132,11 @@ class AppWindow(QMainWindow, Ui_MainWindow):
             sizelist.append(value)
 
         dr2 = Figure_Canvas()
-        #dr2.chart_bar(labellist, sizelist)
+        dr2.chart_donut(labellist,sizelist,'Total\n84584')
         graphicscene2 = QtWidgets.QGraphicsScene()
         graphicscene2.addWidget(dr2)
-        self.ui.graphicsView_tab2.setScene(graphicscene2)
-        self.ui.graphicsView_tab2.show()
+        self.ui.graphicsView_ovCate1.setScene(graphicscene2)
+        self.ui.graphicsView_ovCate1.show()
 
 
        

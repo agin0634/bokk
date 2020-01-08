@@ -29,11 +29,16 @@ def getalldateAmount_month(datalist):
             months.append(ym)
             monthsDir.update({ym : 0})
         # add amount value
-        ## TODO check income or expenses
-        a = int(d.get('Amount').replace('-',''))
-        total = int(monthsDir.get(ym)) + a
-        monthsDir.update({ym : total})
-
+        if str(d.get('Income/Expenses')) == 'Expenses':
+            a = int(d.get('Amount').replace('-',''))
+            total = int(monthsDir.get(ym)) + a
+            monthsDir.update({ym : total})
+        elif str(d.get('Income/Expenses')) == 'Income':
+            # TODO add income amount
+            pass
+        else:
+            pass
+            
     for (key, value) in monthsDir.items():
         print(key," ::", value)
 
@@ -51,12 +56,20 @@ def getallCategoryAmount(datalist):
             categories.append(c)
             categoriesDir.update({c : 0})
         # add amount value
-        ## TODO check income or expenses
-        a = int(d.get('Amount').replace('-',''))
-        total = int(categoriesDir.get(c)) + a
-        categoriesDir.update({c : total})
-     
-    for (key, value) in categoriesDir.items():
-        print(key," ::", value)
+        if str(d.get('Income/Expenses')) == 'Expenses':
+            a = int(d.get('Amount').replace('-',''))
+            total = int(categoriesDir.get(c)) + a
+            categoriesDir.update({c : total})
+        elif str(d.get('Income/Expenses')) == 'Income':
+            # TODO add income amount
+            pass
+        else:
+            pass
     
-    return categoriesDir
+    # sort by amount value
+    sort = {k: v for k, v in sorted(categoriesDir.items(), key=lambda item: item[1])}
+    
+    for (key, value) in sort.items():
+        print(key," ::", value)
+
+    return sort

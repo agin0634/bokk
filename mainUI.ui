@@ -81,7 +81,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_ovDate">
        <attribute name="title">
@@ -100,9 +100,9 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-707</y>
+             <y>0</y>
              <width>739</width>
-             <height>1418</height>
+             <height>1398</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -111,7 +111,7 @@
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>1400</height>
+                <height>1380</height>
                </size>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -133,13 +133,50 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tab_ovCate">
        <attribute name="title">
         <string>總覽</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QGraphicsView" name="graphicsView_tab1"/>
+         <widget class="QScrollArea" name="scrollArea_2">
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOn</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>739</width>
+             <height>938</height>
+            </rect>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QWidget" name="widget_2" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>920</height>
+               </size>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <widget class="QGraphicsView" name="graphicsView_ovCate1"/>
+               </item>
+               <item>
+                <widget class="QGraphicsView" name="graphicsView_ovCate2"/>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
         </item>
        </layout>
       </widget>
