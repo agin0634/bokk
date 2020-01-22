@@ -44,6 +44,10 @@ class Figure_Canvas(FigureCanvas):
         self.setParent(parent)
         self.axes = fig.add_subplot(111)
 
+    def func(self,pct,sizelist):
+        absolute = int(pct/100.*np.sum(sizelist))
+        return "{:.1f}%\n({:d})".format(pct, absolute)
+
     def chart_bar(self,labellist,sizelist,title):
         x = labellist
         y = sizelist
@@ -57,7 +61,7 @@ class Figure_Canvas(FigureCanvas):
         labels = labellist
         sizes = sizelist
 
-        self.axes.pie(sizes, labels=labels, autopct='%1.1f%%',shadow=False, startangle=90, pctdistance=0.75, colors = self.color)
+        self.axes.pie(sizes, labels=labels, autopct=lambda pct: self.func(pct,sizes),shadow=False, startangle=90, pctdistance=0.75, colors = self.color)
         self.axes.axis('equal')
         self.axes.set_title(title)
         self.axes.legend(title="Months",loc="center left",bbox_to_anchor=(0.9,0.5))
