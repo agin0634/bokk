@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1080</width>
+    <height>720</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>800</width>
-    <height>600</height>
+    <width>1080</width>
+    <height>720</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>800</width>
-    <height>600</height>
+    <width>1920</width>
+    <height>1080</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -81,7 +81,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_ovDate">
        <attribute name="title">
@@ -100,9 +100,9 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>0</y>
-             <width>739</width>
-             <height>1398</height>
+             <y>-635</y>
+             <width>1019</width>
+             <height>1598</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
@@ -111,18 +111,39 @@
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>1380</height>
+                <height>1580</height>
                </size>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_2">
                <item>
-                <widget class="QGraphicsView" name="graphicsView_ovDate1"/>
+                <widget class="QGraphicsView" name="graphicsView_ovDate1">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>500</height>
+                  </size>
+                 </property>
+                </widget>
                </item>
                <item>
-                <widget class="QGraphicsView" name="graphicsView_ovDate2"/>
+                <widget class="QGraphicsView" name="graphicsView_ovDate2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>500</height>
+                  </size>
+                 </property>
+                </widget>
                </item>
                <item>
-                <widget class="QGraphicsView" name="graphicsView_ovDate3"/>
+                <widget class="QGraphicsView" name="graphicsView_ovDate3">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>500</height>
+                  </size>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -151,8 +172,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>739</width>
-             <height>938</height>
+             <width>1019</width>
+             <height>1078</height>
             </rect>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_7">
@@ -161,15 +182,29 @@
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>920</height>
+                <height>1060</height>
                </size>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_3">
                <item>
-                <widget class="QGraphicsView" name="graphicsView_ovCate1"/>
+                <widget class="QGraphicsView" name="graphicsView_ovCate1">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>500</height>
+                  </size>
+                 </property>
+                </widget>
                </item>
                <item>
-                <widget class="QGraphicsView" name="graphicsView_ovCate2"/>
+                <widget class="QGraphicsView" name="graphicsView_ovCate2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>500</height>
+                  </size>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -180,13 +215,64 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="tab_list">
        <attribute name="title">
         <string>Tab 2</string>
        </attribute>
        <layout class="QHBoxLayout" name="horizontalLayout_4">
         <item>
-         <widget class="QGraphicsView" name="graphicsView_tab2"/>
+         <widget class="QScrollArea" name="scrollArea_3">
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_3">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>-186</y>
+             <width>1019</width>
+             <height>1078</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QWidget" name="widget_3" native="true">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>1060</height>
+               </size>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <item>
+                <widget class="QGraphicsView" name="graphicsView_list">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>460</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>460</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QTableWidget" name="tableWidget_list">
+                 <property name="showGrid">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -210,7 +296,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1080</width>
      <height>21</height>
     </rect>
    </property>

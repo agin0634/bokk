@@ -8,7 +8,7 @@ def getalldate_year(datalist):
     years = []
 
     for d in datalist:
-        date = d['\ufeffDate']
+        date = d['Date']
         y = datetime.datetime.strptime(date,'%Y-%m-%d')
 
         if y.year not in years:
@@ -21,7 +21,7 @@ def getalldateAmount_month(datalist):
     monthsDir = {}
 
     for  d in datalist:
-        date = d.get('\ufeffDate')
+        date = d.get('Date')
         m = datetime.datetime.strptime(date,'%Y-%m-%d')
         # add month key
         ym = str(m.year) + "/" + str(m.month)
@@ -39,8 +39,8 @@ def getalldateAmount_month(datalist):
         else:
             pass
             
-    for (key, value) in monthsDir.items():
-        print(key," ::", value)
+    '''for (key, value) in monthsDir.items():
+        print(key," ::", value)'''
 
     return monthsDir
 
@@ -69,7 +69,8 @@ def getallCategoryAmount(datalist):
     # sort by amount value
     sort = {k: v for k, v in sorted(categoriesDir.items(), key=lambda item: item[1])}
     
-    for (key, value) in sort.items():
-        print(key," ::", value)
+    '''for (key, value) in sort.items():
+        print(key," ::", value)'''
 
     return sort
+

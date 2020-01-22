@@ -1,4 +1,50 @@
 ﻿Date,Income/Expenses,Category,Memo,Amount
+2020-01-22,Expenses,Food,卡-午餐,-107
+2020-01-21,Expenses,Food,馬爹力餐酒館,-340
+2020-01-21,Expenses,Food,午餐,-60
+2020-01-20,Expenses,Food,午餐,-75
+2020-01-19,Expenses,Board game,桌遊,-91
+2020-01-19,Expenses,Food,卡-蜂蜜金棗,-480
+2020-01-19,Expenses,Gift,卡-犁記,-780
+2020-01-19,Expenses,Food,祥富水產,-431
+2020-01-19,Expenses,Drinks,御前上茶,-90
+2020-01-17,Expenses,Drinks,春水堂,-85
+2020-01-17,Expenses,Food,卡-晚餐,-147
+2020-01-17,Expenses,Food,午餐,-80
+2020-01-16,Expenses,Food,大亨堡,-45
+2020-01-15,Expenses,Food,蜜地瓜,-40
+2020-01-15,Expenses,Food,午餐,-110
+2020-01-14,Expenses,Food,四季逗 藍莓蔓越莓冰沙,-75
+2020-01-14,Expenses,Food,午餐,-70
+2020-01-13,Expenses,Food,午餐,-80
+2020-01-13,Expenses,Clothing,改衣服,-700
+2020-01-12,Expenses,Board game,桌遊,-180
+2020-01-12,Expenses,Drinks,可樂,-30
+2020-01-12,Expenses,Food,烤饅頭,-55
+2020-01-12,Expenses,Food,米朗米熱狗,-150
+2020-01-11,Expenses,Furniture,衣櫃滑軌,-85
+2020-01-10,Expenses,Drinks,黑豆奶,-13
+2020-01-10,Expenses,Food,午餐,-75
+2020-01-09,Expenses,Food,午餐,-80
+2020-01-08,Expenses,Drinks,檸檬愛玉,-40
+2020-01-08,Expenses,Food,午餐,-75
+2020-01-07,Expenses,Food,老闆買單,-130
+2020-01-07,Expenses,Food,午餐,-70
+2020-01-06,Expenses,Food,Oreo,-50
+2020-01-06,Expenses,Food,午餐,-70
+2020-01-05,Expenses,Food,晚餐,-42
+2020-01-05,Expenses,Food,口香糖,-39
+2020-01-05,Expenses,Daily commodies,髮夾,-39
+2020-01-05,Expenses,Drinks,餘地 烏龍鮮奶茶,-160
+2020-01-05,Expenses,Food,午餐,-140
+2020-01-03,Expenses,Food,晚餐,-89
+2020-01-03,Expenses,Board game,桌遊,-100
+2020-01-03,Expenses,Drinks,四季逗 葡萄藍莓冰沙,-75
+2020-01-03,Expenses,Food,午餐,-75
+2020-01-02,Expenses,Food,Oreo,-50
+2020-01-02,Expenses,Food,午餐,-80
+2020-01-01,Expenses,Food,阿舍乾麵,-137
+2020-01-01,Expenses,Board game,桌遊,-114
 2019-12-31,Expenses,Drinks,拿鐵,-45
 2019-12-31,Expenses,Food,午餐,-120
 2019-12-30,Expenses,Drinks,冬瓜牛奶,-40
@@ -6,7 +52,7 @@
 2019-12-29,Expenses,Food,桂桃嬤,-135
 2019-12-28,Expenses,Food,午餐,-80
 2019-12-27,Expenses,Drinks,拿鐵,-65
-2019-12-27,Expenses,Social,line貼圖,-74
+2019-12-27,Expenses,Social,卡-line貼圖,-74
 2019-12-27,Expenses,Food,午餐,-70
 2019-12-26,Expenses,Health,牙醫,-150
 2019-12-26,Expenses,Gas,機車95,-110
@@ -395,10 +441,3 @@
 2019-06-03,Expenses,"Contact Lens ,Glasses",酷柏雙週,-230
 2019-06-03,Expenses,Food,冰炫風,-60
 2019-06-03,Expenses,Food,午餐,-120
-2019-05-31,Expenses,Food,午餐,-127
-2019-05-30,Expenses,Food,午餐,-80
-2019-05-30,Expenses,Drinks,cola,-20
-2019-05-29,Expenses,Food,晚餐,-140
-2019-05-28,Expenses,Gas,gas,-150
-2019-05-28,Expenses,Food,午餐,-79
-2019-05-27,Expenses,Drinks,西瓜汁,-50
