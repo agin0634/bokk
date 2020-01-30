@@ -35,7 +35,7 @@ class Figure_Canvas(FigureCanvas):
     color = ['#2964BA', '#F0FFBD', '#F2C029', '#6ECC7B', '#FF8335', '#3FC211',
     '#6E94CC', '#FFADA2', '#B82240', '#C0A3FF', '#88F3FE', '#FF8AC4', '#A53CC2']
     
-    def __init__(self, parent=None, width=8, height=5, dpi=100):
+    def __init__(self, parent=None, width=8.5, height=5, dpi=100):
         #fig = Figure(figsize=(width, height), dpi=100)  
         fig = plt.figure(figsize=(width, height), dpi=100)
         plt.style.use('seaborn-whitegrid')
@@ -54,7 +54,7 @@ class Figure_Canvas(FigureCanvas):
         width = 0.5
         self.axes.bar(x,y,width,align="center")
         self.axes.set_xticks(x)
-        self.axes.set_xticklabels(x)
+        self.axes.set_xticklabels(x ,rotation=60)
         self.axes.set_title(title)
     
     def chart_pie(self,labellist,sizelist,title):
@@ -82,7 +82,7 @@ class Figure_Canvas(FigureCanvas):
             horizontalalignment = {-1: "right", 1: "left"}[int(np.sign(x))]
             connectionstyle = "angle,angleA=0,angleB={}".format(ang)
             kw["arrowprops"].update({"connectionstyle": connectionstyle})
-            self.axes.annotate(labels[i], xy=(x, y), xytext=(1.4*np.sign(x), 1.4*y),
+            self.axes.annotate("{label} ({size})".format(label=labels[i],size=sizes[i]), xy=(x, y), xytext=(1.4*np.sign(x), 1.4*y),
                 horizontalalignment=horizontalalignment, **kw)
 
         self.axes.set_title(title,y=0.425)

@@ -81,7 +81,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_ovDate">
        <attribute name="title">
@@ -100,7 +100,7 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-635</y>
+             <y>0</y>
              <width>1019</width>
              <height>1598</height>
             </rect>
@@ -171,7 +171,7 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>0</y>
+             <y>-512</y>
              <width>1019</width>
              <height>1078</height>
             </rect>
@@ -229,7 +229,7 @@
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-186</y>
+             <y>-512</y>
              <width>1019</width>
              <height>1078</height>
             </rect>
