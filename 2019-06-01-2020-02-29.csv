@@ -1,10 +1,81 @@
 ﻿Date,Income/Expenses,Category,Memo,Amount
+2020-02-27,Expenses,Food,晚餐,-105
+2020-02-27,Expenses,Food,午餐,-120
+2020-02-26,Expenses,Drinks,紅玉,-25
+2020-02-26,Expenses,Food,午餐,-90
+2020-02-25,Expenses,Food,午餐,-94
+2020-02-24,Expenses,Drinks,珍珠紅玉,-30
+2020-02-24,Expenses,Food,午餐,-90
+2020-02-24,Expenses,Drinks,水,-25
+2020-02-23,Expenses,Food,碗裡麵,-90
+2020-02-23,Expenses,Food,蜜地瓜,-20
+2020-02-23,Expenses,Food,早餐,-75
+2020-02-21,Expenses,Food,晚餐,-85
+2020-02-21,Expenses,Food,午餐,-110
+2020-02-20,Expenses,Food,午餐,-75
+2020-02-19,Expenses,Food,午餐,-80
+2020-02-18,Expenses,Daily commodies,防潮劑,-69
+2020-02-18,Expenses,Food,白飯,-10
+2020-02-18,Expenses,Drinks,珍珠紅玉,-40
+2020-02-17,Expenses,Food,午餐,-110
+2020-02-17,Expenses,Drinks,牛奶,-45
+2020-02-16,Expenses,Food,蜜雪蛋糕,-25
+2020-02-16,Expenses,Daily commodies,爽身粉,-77
+2020-02-16,Expenses,Food,桂桃嬤,-115
+2020-02-16,Expenses,Food,蜜地瓜,-20
+2020-02-16,Expenses,Food,早餐,-77
+2020-02-15,Expenses,Board game,桌遊,-50
+2020-02-15,Expenses,Food,鹿仔草,-55
+2020-02-14,Expenses,Food,卡-LAONE,-2970
+2020-02-14,Expenses,Drinks,星巴克 拿鐵,-80
+2020-02-14,Expenses,Food,午餐,-70
+2020-02-13,Expenses,Food,午餐,-70
+2020-02-12,Expenses,Tax,電話費,-998
+2020-02-12,Expenses,Daily commodies,卡-手電筒,-3140
+2020-02-12,Expenses,Food,晚餐,-100
+2020-02-12,Expenses,Food,午餐,-80
+2020-02-11,Expenses,Drinks,烏龍茶,-25
+2020-02-11,Expenses,Food,午餐,-130
+2020-02-10,Expenses,Food,午餐,-80
+2020-02-09,Expenses,Clothing,卡-GU,-1270
+2020-02-09,Expenses,Food,晚餐,-50
+2020-02-09,Expenses,Food,午餐,-105
+2020-02-09,Expenses,"Contact Lens ,Glasses",酷柏雙週 550,-220
+2020-02-07,Expenses,Food,羅宋麵包,-50
+2020-02-07,Expenses,Food,卡-祥富水產,-381
+2020-02-07,Expenses,Food,午餐,-100
+2020-02-06,Expenses,Hair,剪髮,-100
+2020-02-06,Expenses,Drinks,拿鐵,-45
+2020-02-06,Expenses,Food,午餐,-70
+2020-02-05,Expenses,Health,馬光掛號費,-150
+2020-02-05,Expenses,Drinks,珍珠紅玉,-30
+2020-02-05,Expenses,Food,午餐,-80
+2020-02-04,Expenses,Drinks,星巴克 抹茶,-75
+2020-02-04,Expenses,Food,午餐,-95
+2020-02-03,Expenses,Drinks,優酪乳,-28
+2020-02-03,Expenses,Food,午餐,-70
+2020-02-02,Expenses,Book,500句生活英文,-69
+2020-02-02,Expenses,Food,晚餐,-120
+2020-02-02,Expenses,Drinks,星巴克,-75
+2020-02-02,Expenses,Food,午餐,-150
+2020-02-01,Expenses,Food,地瓜,-95
+2020-01-31,Expenses,Drinks,珍珠紅玉,-30
+2020-01-31,Expenses,Food,午餐,-80
+2020-01-31,Expenses,Drinks,紅茶,-40
+2020-01-31,Expenses,Food,晚餐,-130
+2020-01-30,Expenses,Food,紅茶珍珠,-35
+2020-01-30,Expenses,Food,午餐,-55
+2020-01-29,Expenses,Food,春水堂,-180
+2020-01-27,Expenses,Food,午餐,-125
+2020-01-26,Expenses,Food,地瓜球,-40
+2020-01-25,Expenses,Food,起司條,-50
+2020-01-22,Expenses,Food,漢堡王,-194
 2020-01-22,Expenses,Food,卡-午餐,-107
 2020-01-21,Expenses,Food,馬爹力餐酒館,-340
 2020-01-21,Expenses,Food,午餐,-60
 2020-01-20,Expenses,Food,午餐,-75
 2020-01-19,Expenses,Board game,桌遊,-91
-2020-01-19,Expenses,Food,卡-蜂蜜金棗,-480
+2020-01-19,Expenses,Gift,卡-蜂蜜金棗,-480
 2020-01-19,Expenses,Gift,卡-犁記,-780
 2020-01-19,Expenses,Food,祥富水產,-431
 2020-01-19,Expenses,Drinks,御前上茶,-90
@@ -95,14 +166,14 @@
 2019-12-06,Expenses,Food,晚餐,-83
 2019-12-06,Expenses,Food,午餐,-80
 2019-12-05,Expenses,Food,午餐,-70
-2019-12-04,Expenses,Others,護照,-1300
+2019-12-04,Expenses,Personal,護照,-1300
 2019-12-04,Expenses,Food,午餐,-160
 2019-12-04,Expenses,Food,早餐,-60
 2019-12-03,Expenses,Food,卡-鄧師父,-235
 2019-12-03,Expenses,Food,早餐,-40
 2019-12-02,Expenses,Daily commodies,卡-鼻罩,-246
 2019-12-02,Expenses,Food,晚餐,-140
-2019-12-02,Expenses,Others,洗相片,-150
+2019-12-02,Expenses,Personal,洗相片,-150
 2019-12-02,Expenses,Food,午餐,-80
 2019-12-01,Expenses,Food,桂桃嬤,-130
 2019-12-01,Expenses,Food,一點點輕食,-265

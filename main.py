@@ -70,7 +70,7 @@ class Figure_Canvas(FigureCanvas):
         labels = labellist
         sizes = sizelist
         
-        wedges = self.axes.pie(sizes, wedgeprops=dict(width=0.5), autopct='%1.1f%%', startangle=180, pctdistance=0.8, colors = self.color)
+        wedges = self.axes.pie(sizes, wedgeprops=dict(width=0.5), autopct='%1.1f%%', startangle=160, pctdistance=0.8, colors = self.color)
         bbox_props = dict(boxstyle="square,pad=0.3", fc="w", ec="k", lw=0.72)
         kw = dict(arrowprops=dict(arrowstyle="-"),
             bbox=bbox_props, zorder=0, va="center")
@@ -173,7 +173,7 @@ class AppWindow(QMainWindow, Ui_MainWindow):
             total += v
 
         for key, value in dir.items():
-            if value < total *0.019:
+            if value < total *0.012:
                 labellist_sa.append(key)
                 sizelist_sa.append(value)
                 total_sa += value
